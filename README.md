@@ -1,10 +1,14 @@
 # 🚦 Traffic Light FSM
 
-This project implements a **4-state Traffic Light Controller** using **SystemVerilog** and simulates its behavior using **Questa/ModelSim**.
+## 🧪 Simulation Result
+
+![Waveform](TB_SCREENSHOT.png)
 
 ---
 
 ## 📌 Overview
+
+This project implements a **4-state Traffic Light Controller** using **SystemVerilog** and simulates its behavior using **Questa/ModelSim**.
 
 The system controls traffic lights for two directions:
 
@@ -26,7 +30,7 @@ At any time, only one street has a green light while the other remains red.
 
 ### State Sequence
 
-```
+```id="k0l1z2"
 S0 → S1 → S2 → S3 → S0
 ```
 
@@ -62,12 +66,6 @@ S0 → S1 → S2 → S3 → S0
 
 ---
 
-## 🧪 Simulation Result
-
-![Waveform](TB_SCREENSHOT.png)
-
----
-
 ## 📁 Files
 
 * `traffic_light_fsm.sv` → FSM design
@@ -77,7 +75,7 @@ S0 → S1 → S2 → S3 → S0
 
 ## 🚀 Run Simulation
 
-```
+```id="q9w8e7"
 vlib work
 vlog traffic_light_fsm.sv
 vlog tb_traffic_light_fsm.sv
