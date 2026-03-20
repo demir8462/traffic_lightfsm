@@ -14,10 +14,10 @@ Z1 dC:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/simula
 T_opt
 !i145 1
 !i144 0
-!s110 1774040824
-VDaXHeioVkUGzk_Bf6f;=41
+!s110 1774042140
+VEno6?XkBH<4j;W4X?X9Jc0
 04 20 4 work tb_traffic_light_fsm fast 0
-=1-3065eccbd65a-69bdb6f8-c9-2558
+=1-3065eccbd65a-69bdbc1b-23b-4e30
 R0
 !s12f OEM100
 !s12b OEM100
@@ -30,7 +30,7 @@ OL;O;2025.2;82
 vtb_traffic_light_fsm
 2C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv
 Z2 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z3 !s110 1774040823
+Z3 !s110 1774042138
 !i10b 1
 !s100 4MDS7obVjEfWnL]1KU`KW3
 IiSKlfjD;^2Ho8cUUAJ04W3
@@ -46,7 +46,7 @@ Z5 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z6 !s108 1774040823.000000
+Z6 !s108 1774042138.000000
 !s107 C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm|C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv|
 !i113 0

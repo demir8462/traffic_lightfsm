@@ -27,32 +27,32 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm {C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/traffic_light_fsm.sv}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 00:07:03 on Mar 21,2026
+# Start time: 00:28:58 on Mar 21,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm" C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/traffic_light_fsm.sv 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module traffic_light_fsm
 # 
 # Top level modules:
 # 	traffic_light_fsm
-# End time: 00:07:03 on Mar 21,2026, Elapsed time: 0:00:00
+# End time: 00:28:58 on Mar 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm {C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv}
 # Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 00:07:03 on Mar 21,2026
+# Start time: 00:28:58 on Mar 21,2026
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm" C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv 
 # ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
 # -- Compiling module tb_traffic_light_fsm
 # 
 # Top level modules:
 # 	tb_traffic_light_fsm
-# End time: 00:07:03 on Mar 21,2026, Elapsed time: 0:00:00
+# End time: 00:28:58 on Mar 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_traffic_light_fsm
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_traffic_light_fsm 
-# Start time: 00:07:03 on Mar 21,2026
+# Start time: 00:28:59 on Mar 21,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
@@ -86,5 +86,37 @@
 #    Time: 250 ns  Iteration: 0  Instance: /tb_traffic_light_fsm
 # 1
 # Break in Module tb_traffic_light_fsm at C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv line 63
-# End time: 00:12:33 on Mar 21,2026, Elapsed time: 0:05:30
+add wave -position end  sim:/tb_traffic_light_fsm/uut/state
+run -all
+# Causality operation skipped due to absence of debug database file
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb_traffic_light_fsm(fast)
+# Loading work.traffic_light_fsm(fast)
+run 100n
+# Invalid time value: 100n
+run 100ns
+# Zaman=0 | reset=1 | TAORB=1 | LA=001 | LB=100
+# Zaman=20000: Reset kaldirildi. Beklenen Durum: S0 (LA=Yesil, LB=Kirmizi)
+# Zaman=20000 | reset=0 | TAORB=1 | LA=001 | LB=100
+# Zaman=50000: TAORB = 0 yapildi. S1'e (Sari isik) gecis bekleniyor.
+# Zaman=50000 | reset=0 | TAORB=0 | LA=001 | LB=100
+# Zaman=55000 | reset=0 | TAORB=0 | LA=010 | LB=100
+run 100ns
+# Zaman=105000 | reset=0 | TAORB=0 | LA=100 | LB=001
+# Zaman=120000: 5 sayim bitti. Beklenen Durum: S2 (LA=Kirmizi, LB=Yesil)
+# Zaman=150000: TAORB = 1 yapildi. S3'e (Sari isik) gecis bekleniyor.
+# Zaman=150000 | reset=0 | TAORB=1 | LA=100 | LB=001
+# Zaman=155000 | reset=0 | TAORB=1 | LA=100 | LB=010
+run 100ns
+# Zaman=205000 | reset=0 | TAORB=1 | LA=001 | LB=100
+# Zaman=220000: 5 sayim bitti. Basa donuldu. Beklenen Durum: S0
+# Zaman=250000: Simulasyon tamamlandi.
+# ** Note: $finish    : C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv(63)
+#    Time: 250 ns  Iteration: 0  Instance: /tb_traffic_light_fsm
+# 1
+# Break in Module tb_traffic_light_fsm at C:/Users/ali/Desktop/VERILOGODEVLERI/trafficlightfsm/traffic_lightfsm/tb_traffic_light_fsm.sv line 63
+# End time: 00:39:03 on Mar 21,2026, Elapsed time: 0:10:04
 # Errors: 0, Warnings: 1
