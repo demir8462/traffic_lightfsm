@@ -90,7 +90,7 @@ Simulated using **Questa/ModelSim**
 project_folder/
  ├── traffic_light_fsm.sv
  ├── tb_traffic_light_fsm.sv
- ├── waveform.png   ← (add this)
+ ├── TB_SCREENSHOT.png   ← (add this)
 ```
 
 ---
