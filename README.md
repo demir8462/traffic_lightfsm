@@ -11,18 +11,18 @@ The system controls traffic lights for two directions:
 * **Street A (LA)**
 * **Street B (LB)**
 
-At any given time, only one street has a green light while the other remains red. The controller uses a **Finite State Machine (FSM)** with timed transitions.
+At any time, only one street has a green light while the other remains red.
 
 ---
 
 ## 🔁 FSM States
 
-| State | LA (Street A) | LB (Street B) | Description                   |
-| ----- | ------------- | ------------- | ----------------------------- |
-| S0    | 🟢 Green      | 🔴 Red        | Traffic flows on Street A     |
-| S1    | 🟡 Yellow     | 🔴 Red        | Transition phase for Street A |
-| S2    | 🔴 Red        | 🟢 Green      | Traffic flows on Street B     |
-| S3    | 🔴 Red        | 🟡 Yellow     | Transition phase for Street B |
+| State | LA (Street A) | LB (Street B) | Description  |
+| ----- | ------------- | ------------- | ------------ |
+| S0    | 🟢 Green      | 🔴 Red        | A is active  |
+| S1    | 🟡 Yellow     | 🔴 Red        | A is slowing |
+| S2    | 🔴 Red        | 🟢 Green      | B is active  |
+| S3    | 🔴 Red        | 🟡 Yellow     | B is slowing |
 
 ### State Sequence
 
@@ -35,25 +35,22 @@ S0 → S1 → S2 → S3 → S0
 ## ⏱️ Timing
 
 * Yellow states (**S1** and **S3**) last **5 clock cycles**
-* Controlled using an internal **counter (timer)**
+* Controlled by an internal **timer**
 
 ---
 
 ## 📥 Inputs
 
-* `clk` → System clock
-* `reset` → Asynchronous reset
-* `TAORB` → Traffic indicator
-
-  * `1`: Traffic on Street A
-  * `0`: Traffic on Street B
+* `clk` → Clock signal
+* `reset` → Reset signal
+* `TAORB` → Traffic selector
 
 ---
 
 ## 📤 Outputs
 
-* `LA[2:0]` → Traffic light for Street A (RGB encoding)
-* `LB[2:0]` → Traffic light for Street B (RGB encoding)
+* `LA[2:0]` → Traffic light for Street A
+* `LB[2:0]` → Traffic light for Street B
 
 ### Encoding
 
@@ -65,33 +62,9 @@ S0 → S1 → S2 → S3 → S0
 
 ---
 
-## 🧠 Design Details
+## 🧪 Simulation Result
 
-* FSM implemented using **SystemVerilog**
-* Clean separation of:
-
-  * State register
-  * Next-state logic
-  * Output logic
-* Internal counter increments only in **yellow states**
-* Fully synthesizable design
-
----
-
-## 🧪 Simulation
-
-Simulated using **Questa/ModelSim**
-
-### Example Waveform
-
-> 📌 Add your waveform screenshot here as `waveform.png`
-
-```
-project_folder/
- ├── traffic_light_fsm.sv
- ├── tb_traffic_light_fsm.sv
- ├── TB_SCREENSHOT.png   ← (add this)
-```
+![Waveform](TB_SCREENSHOT.png)
 
 ---
 
@@ -115,7 +88,7 @@ run 500ns
 
 ---
 
-## ⚙️ Tools Used
+## ⚙️ Tools
 
 * Intel Quartus Prime Lite
 * Questa / ModelSim
@@ -123,12 +96,6 @@ run 500ns
 
 ---
 
-## 📚 Course
-
-Prepared for **ELE432 - Digital Design / FPGA**
-
----
-
 ## 👨‍💻 Author
 
-**Ali Demir**
+Ali Demir
